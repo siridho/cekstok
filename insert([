@@ -1,0 +1,7 @@
+
+In Filesystem.php line 122:
+                                                                                                                       
+  file_put_contents(C:\Users\ASUS\Documents\GitHub\InventoryKMA\database/seeds/DB::table('users')-.php): failed to op  
+  en stream: No such file or directory                                                                                 
+                                                                                                                       
+
