@@ -40,13 +40,27 @@
         <input class="form-control" name="harga_jual" type="number" id="harga_jual" value="{{ $barang->harga_jual or ''}}" >
         {!! $errors->first('harga_jual', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('gambar_barang') ? 'has-error' : ''}}">
-    <label for="gambar_barang" class="col-md-4 control-label">{{ 'Gambar Barang' }}</label>
-    <div class="col-md-6">
-        <input class="form-control" name="gambar_barang" type="file" accept="image" id="gambar_barang" value="{{ $barang->gambar_barang or ''}}" >
-        {!! $errors->first('gambar_barang', '<p class="help-block">:message</p>') !!}
+</div>
+<div class="form-group">
+    <label class="control-label col-lg-4">Gambar Barang</label>
+    <div class="col-lg-8">
+        <div class="fileinput {{(isset($barang) && $barang->gambar_barang!="")? 'fileinput-exists':'fileinput-new'}}" data-provides="fileinput">
+            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                @if(isset($barang) && $barang->gambar_barang)
+                    <img src="{{asset('img/'.$barang->gambar_barang)}}">
+                @endif
+            </div>
+            <div>
+                <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+            </div>
+        </div>
+
     </div>
-</div><div class="form-group {{ $errors->has('kode_supplier') ? 'has-error' : ''}}">
+</div>
+
+
+<div class="form-group {{ $errors->has('kode_supplier') ? 'has-error' : ''}}">
     <label for="kode_supplier" class="col-md-4 control-label">{{ 'Kode Supplier' }}</label>
     <div class="col-md-6">
          <select class="form-control" required name="kode_supplier" type="text" id="kode_supplier" value="{{ $merkbarang->kode_supplier or ''}}">

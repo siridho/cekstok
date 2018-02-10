@@ -1,35 +1,53 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            
+    <div id="content">
+        <div class="outer">
+            <div class="inner bg-light lter">
+                <!--BEGIN INPUT TEXT FIELDS-->
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="box dark">
+                        <header>
+                            <div class="icons"><i class="fa fa-edit"></i></div>
+                            <h5>Buat Barang</h5>
+                            <!-- .toolbar -->
+                            <div class="toolbar">
+                                <nav style="padding: 8px;">
+                                    <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                </nav>
+                            </div>            <!-- /.toolbar -->
+                        </header>
+                        <div id="div-1" class="body">
 
-            <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Create New barang</div>
-                    <div class="panel-body">
-                        <a href="{{ url('/barang') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+                            <a href="{{ url('/barang') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                            <br />
+                            <br />
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                            @if ($errors->any())
+                                <ul class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
 
-                        <form method="POST" action="{{ url('/barang') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+                            <form method="POST" action="{{ url('/barang') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                                {{ csrf_field() }}
 
-                            @include ('barang.form')
+                                @include ('barang.form')
 
-                        </form>
+                            </form>
 
+                        </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

@@ -28,6 +28,11 @@
     <!-- animate.css stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/lib/animate.css/animate.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('assets/lib/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/lib/jquery.gritter/css/jquery.gritter.css') }}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/themes/default/css/uniform.default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,8 +48,46 @@
     <!--jQuery -->
     <script src="{{ asset('assets/lib/jquery/jquery.js') }}"></script>
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+
     <!--Bootstrap -->
     <script src="{{ asset('assets/lib/bootstrap/js/bootstrap.js') }}"></script>
+
+    <!-- MetisMenu -->
+    <script src="{{ asset('assets/lib/metismenu/metisMenu.js') }}"></script>
+    <!-- onoffcanvas -->
+    <script src="{{ asset('assets/lib/onoffcanvas/onoffcanvas.js') }}"></script>
+    <!-- Screenfull -->
+    <script src="{{ asset('assets/lib/screenfull/screenfull.js') }}"></script>
+
+    <script src="{{ asset('assets/lib/plupload/js/plupload.full.min.js') }}"></script>
+    <script src="{{ asset('assets/lib/plupload/js/jquery.plupload.queue/jquery.plupload.queue.min.js') }}"></script>
+    <script src="{{ asset('assets/lib/jquery.gritter/js/jquery.gritter.min.js') }}"></script>
+    <script src="{{ asset('assets/lib/formwizard/js/jquery.form.wizard.js') }}"></script>
+
+    <!-- Metis core scripts -->
+    <script src="{{ asset('assets/js/core.js') }}"></script>
+    <!-- Metis demo scripts -->
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+
+    <script>
+        $(function() {
+            Metis.formWizard();
+        });
+    </script>
+
+    <script src="{{ asset('assets/js/style-switcher.js') }}"></script>
+
+    <style>
+        #content{
+            min-height: 100vh;
+        }
+    </style>
 
 </head>
 <body class=" ">
@@ -64,7 +107,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="index.blade.php" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+                        <a href="index.blade.php" class="navbar-brand"><img src="{{asset('assets/img/logo.png')}}" alt=""></a>
 
                     </header>
 
@@ -134,15 +177,15 @@
                 </div>
                 <div class="user-wrapper bg-dark">
                     <a class="user-link" href="">
-                        <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/user.gif">
+                        <img class="media-object img-thumbnail user-img" alt="User Picture" src="{{asset('assets/img/user.gif')}}">
                     </a>
 
                     <div class="media-body">
                         <h5 class="media-heading">{{ Auth::user()->name }}</h5>
                         <ul class="list-unstyled user-info">
-                            <li><a href="">Administrator</a></li>
-                            <li>Last Access : <br>
-                                <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
+                            <li><a href="">{{ Auth::user()->jabatan }}</a></li>
+                            <li>Last Login : <br>
+                                <small><i class="fa fa-calendar"></i>{{\Carbon\Carbon::parse(Auth()->user()->last_login)->formatLocalized("%d %B %Y")}} {{date("H:i:s",strtotime(Auth()->user()->last_login))}}</small>
                             </li>
                         </ul>
                     </div>
@@ -310,22 +353,5 @@
     <footer class="Footer bg-dark dker">
         <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
     </footer>
-
-
-    <!-- MetisMenu -->
-    <script src="{{ asset('assets/lib/metismenu/metisMenu.js') }}"></script>
-    <!-- onoffcanvas -->
-    <script src="{{ asset('assets/lib/onoffcanvas/onoffcanvas.js') }}"></script>
-    <!-- Screenfull -->
-    <script src="{{ asset('assets/lib/screenfull/screenfull.js') }}"></script>
-
-
-    <!-- Metis core scripts -->
-    <script src="{{ asset('assets/js/core.js') }}"></script>
-    <!-- Metis demo scripts -->
-    <script src="{{ asset('assets/js/app.js') }}"></script>
-
-
-    <script src="{{ asset('assets/js/style-switcher.js') }}"></script>
 </body>
 </html>

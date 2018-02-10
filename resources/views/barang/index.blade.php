@@ -14,7 +14,6 @@
                             </header>
 
                             <div id="collapse4" class="body">
-
                                 <a href="{{ url('/barang/create') }}" class="btn btn-success btn-sm" title="Add New barang">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Add New
                                 </a>
@@ -65,6 +64,7 @@
 
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

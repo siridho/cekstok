@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="content" style="min-height: 100vh">
+    <div id="content">
         <div class="outer">
             <div class="inner bg-light lter">
                 <div class="col-lg-12">
