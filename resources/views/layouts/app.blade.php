@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="{{ asset('assets/lib/jquery.gritter/css/jquery.gritter.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/themes/default/css/uniform.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,54 +46,7 @@
     <link rel="stylesheet/less" type="text/css" href="{{ asset('assets/less/theme.less') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
 
-    <!--jQuery -->
-    <script src="{{ asset('assets/lib/jquery/jquery.js') }}"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.26.6/js/jquery.tablesorter.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
-
-    <!--Bootstrap -->
-    <script src="{{ asset('assets/lib/bootstrap/js/bootstrap.js') }}"></script>
-
-    <!-- MetisMenu -->
-    <script src="{{ asset('assets/lib/metismenu/metisMenu.js') }}"></script>
-    <!-- onoffcanvas -->
-    <script src="{{ asset('assets/lib/onoffcanvas/onoffcanvas.js') }}"></script>
-    <!-- Screenfull -->
-    <script src="{{ asset('assets/lib/screenfull/screenfull.js') }}"></script>
-    <!-- animate.css stylesheet -->
-    <link rel="stylesheet" href="{{asset('assets/lib/animate.css/animate.css')}}">
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css">
-
-    <script src="{{ asset('assets/lib/plupload/js/plupload.full.min.js') }}"></script>
-    <script src="{{ asset('assets/lib/plupload/js/jquery.plupload.queue/jquery.plupload.queue.min.js') }}"></script>
-    <script src="{{ asset('assets/lib/jquery.gritter/js/jquery.gritter.min.js') }}"></script>
-    <script src="{{ asset('assets/lib/formwizard/js/jquery.form.wizard.js') }}"></script>
-
-    <!-- Metis core scripts -->
-    <script src="{{ asset('assets/js/core.js') }}"></script>
-    <!-- Metis demo scripts -->
-    <script src="{{ asset('assets/js/app.js') }}"></script>
-
-    <script>
-        $(function() {
-            Metis.formWizard();
-            Metis.MetisTable();
-            Metis.metisSortable();
-        });
-    </script>
-
-    <script src="{{ asset('assets/js/style-switcher.js') }}"></script>
 
     <style>
         #content{
@@ -150,22 +104,34 @@
                         </div>
                     </div>
 
+
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+                        <!-- .nav -->
+                        <ul class="nav navbar-nav">
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="table.html">Tables</a></li>
+                            <li class='dropdown '>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Form Elements <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="form-general.html">General</a></li>
+                                    <li><a href="form-validation.html">Validation</a></li>
+                                    <li><a href="form-wysiwyg.html">WYSIWYG</a></li>
+                                    <li><a href="form-wizard.html">Wizard &amp; File Upload</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- /.nav -->
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
             </nav>
             <!-- /.navbar -->
             <header class="head">
                 <div class="search-bar">
-                    <form class="main-search" action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Live Search ...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary btn-sm text-muted" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
+
                     <!-- /.main-search -->
                 </div>
                 <!-- /.search-bar -->
@@ -188,7 +154,7 @@
                 </div>
                 <div class="user-wrapper bg-dark">
                     <a class="user-link" href="">
-                        <img class="media-object img-thumbnail user-img" alt="User Picture" src="{{asset('assets/img/user.gif')}}">
+                        <i class="fa fa-user" style="font-size:90px;color:white; margin-right: 10px; margin-left: 10px"></i>
                     </a>
 
                     <div class="media-body">
@@ -196,7 +162,7 @@
                         <ul class="list-unstyled user-info">
                             <li><a href="">{{ Auth::user()->jabatan }}</a></li>
                             <li>Last Login : <br>
-                                <small><i class="fa fa-calendar"></i>{{\Carbon\Carbon::parse(Auth()->user()->last_login)->formatLocalized("%d %B %Y")}} {{date("H:i:s",strtotime(Auth()->user()->last_login))}}</small>
+                                <small><i class="fa fa-calendar"></i> {{\Carbon\Carbon::parse(Auth()->user()->last_login)->formatLocalized("%d %B %Y")}} {{date("H:i:s",strtotime(Auth()->user()->last_login))}}</small>
                             </li>
                         </ul>
                     </div>
@@ -364,5 +330,51 @@
     <footer class="Footer bg-dark dker">
         <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
     </footer>
+
+    <!--jQuery -->
+    <script src="{{ asset('assets/lib/jquery/jquery.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.26.6/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+
+    <!--Bootstrap -->
+    <script src="{{ asset('assets/lib/bootstrap/js/bootstrap.js') }}"></script>
+
+    <!-- MetisMenu -->
+    <script src="{{ asset('assets/lib/metismenu/metisMenu.js') }}"></script>
+    <!-- onoffcanvas -->
+    <script src="{{ asset('assets/lib/onoffcanvas/onoffcanvas.js') }}"></script>
+    <!-- Screenfull -->
+    <script src="{{ asset('assets/lib/screenfull/screenfull.js') }}"></script>
+
+
+
+    <script src="{{ asset('assets/lib/plupload/js/plupload.full.min.js') }}"></script>
+    <script src="{{ asset('assets/lib/plupload/js/jquery.plupload.queue/jquery.plupload.queue.min.js') }}"></script>
+    <script src="{{ asset('assets/lib/jquery.gritter/js/jquery.gritter.min.js') }}"></script>
+    <script src="{{ asset('assets/lib/formwizard/js/jquery.form.wizard.js') }}"></script>
+
+    <!-- Metis core scripts -->
+    <script src="{{ asset('assets/js/core.js') }}"></script>
+    <!-- Metis demo scripts -->
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+
+    <script>
+        $(function() {
+            Metis.formWizard();
+            Metis.MetisTable();
+            Metis.metisSortable();
+        });
+    </script>
+
+    <script src="{{ asset('assets/js/style-switcher.js') }}"></script>
 </body>
 </html>
