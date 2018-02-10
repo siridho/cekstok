@@ -30,8 +30,8 @@
 
     <link rel="stylesheet" href="{{ asset('assets/lib/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/lib/jquery.gritter/css/jquery.gritter.css') }}">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/themes/default/css/uniform.default.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/themes/default/css/uniform.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,6 +49,10 @@
     <script src="{{ asset('assets/lib/jquery/jquery.js') }}"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.26.6/js/jquery.tablesorter.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
@@ -64,6 +68,11 @@
     <script src="{{ asset('assets/lib/onoffcanvas/onoffcanvas.js') }}"></script>
     <!-- Screenfull -->
     <script src="{{ asset('assets/lib/screenfull/screenfull.js') }}"></script>
+    <!-- animate.css stylesheet -->
+    <link rel="stylesheet" href="{{asset('assets/lib/animate.css/animate.css')}}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css">
 
     <script src="{{ asset('assets/lib/plupload/js/plupload.full.min.js') }}"></script>
     <script src="{{ asset('assets/lib/plupload/js/jquery.plupload.queue/jquery.plupload.queue.min.js') }}"></script>
@@ -78,6 +87,8 @@
     <script>
         $(function() {
             Metis.formWizard();
+            Metis.MetisTable();
+            Metis.metisSortable();
         });
     </script>
 
