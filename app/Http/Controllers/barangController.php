@@ -21,26 +21,7 @@ class barangController extends Controller
      */
     public function index(Request $request)
     {
-        $keyword = $request->get('search');
-        $perPage = 25;
-
-        if (!empty($keyword)) {
-            $barang = barang::where('kode_barang', 'LIKE', "%$keyword%")
-                ->orWhere('nama', 'LIKE', "%$keyword%")
-                ->orWhere('nomor_izin', 'LIKE', "%$keyword%")
-                ->orWhere('spesifikasi_khusus', 'LIKE', "%$keyword%")
-                ->orWhere('asal_negara', 'LIKE', "%$keyword%")
-                ->orWhere('harga_beli', 'LIKE', "%$keyword%")
-                ->orWhere('harga_jual', 'LIKE', "%$keyword%")
-                ->orWhere('gambar_barang', 'LIKE', "%$keyword%")
-                ->orWhere('kode_supplier', 'LIKE', "%$keyword%")
-                ->orWhere('kategori_barang', 'LIKE', "%$keyword%")
-                ->orWhere('merk_barang', 'LIKE', "%$keyword%")
-                ->paginate($perPage);
-        } else {
-            $barang = barang::paginate($perPage);
-        }
-
+        $barang = barang::all();
         return view('barang.index', compact('barang'));
     }
 

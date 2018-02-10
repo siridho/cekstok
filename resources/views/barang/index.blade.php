@@ -18,21 +18,10 @@
                                     <i class="fa fa-plus" aria-hidden="true"></i> Add New
                                 </a>
 
-                                <form method="GET" action="{{ url('/barang') }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="submit">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-
                                 <br/>
                                 <br/>
                                 <div class="table-responsive">
-                                    <table class="table table-borderless">
+                                    <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
                                         <thead>
                                             <tr>
                                                 <th>#</th><th>Kode Barang</th><th>Nama</th><th>Nomor Izin</th><th>Actions</th>
@@ -59,7 +48,7 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    <div class="pagination-wrapper"> {!! $barang->appends(['search' => Request::get('search')])->render() !!} </div>
+                                    </div>
                                 </div>
 
                             </div>
