@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::resource('customer', 'customerController');
+Route::resource('supplier', 'supplierController');
+Route::resource('barang', 'barangController');
+Route::resource('kategori-barang', 'kategoriBarangController');
+Route::resource('merk-barang', 'merkBarangController');
