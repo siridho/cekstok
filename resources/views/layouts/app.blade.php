@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('assets/lib/bootstrap/css/bootstrap.css') }}">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('assets/lib/font-awesome/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Metis core stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
