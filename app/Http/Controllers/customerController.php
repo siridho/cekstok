@@ -47,7 +47,7 @@ class customerController extends Controller
      */
     public function create()
     {
-        $sup=customer::orderBy('kode_customer','desc')->first();
+        $sup=customer::withTrashed()->orderBy('kode_customer','desc')->first();
         if($sup)
         $no=(int)substr($sup->kode_customer,1)+1;
         else

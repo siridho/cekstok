@@ -39,10 +39,25 @@
                                 <div class="table-responsive">
                                     <table class="table table-borderless">
                                         <tbody>
-                                            <tr>
-                                                <th>ID</th><td>{{ $barang->kode_barang }}</td>
-                                            </tr>
-                                            <tr><th> Kode Barang </th><td> {{ $barang->kode_barang }} </td></tr><tr><th> Nama </th><td> {{ $barang->nama }} </td></tr><tr><th> Nomor Izin </th><td> {{ $barang->nomor_izin }} </td></tr>
+                                            
+                                            <tr><th> Kode Barang </th><td> {{ $barang->kode_barang }} </td></tr>
+                                            <tr><th> Nama </th><td> {{ $barang->nama }} </td></tr>
+                                            <tr><th> Nomor Izin </th><td> {{ $barang->nomor_izin }} </td></tr>
+                                            <tr><th> Asal Negara </th><td> {{ $barang->asal_negara }} </td></tr>
+                                            <tr><th> Spesifikasi Khusus  </th><td> {{ $barang->spesifikasi_khusus }} </td></tr>
+                                            <tr><th> Harga Beli </th><td>Rp {{ number_format($barang->harga_beli,0,".",",") }} </td></tr>
+                                            <tr><th> Harga Jual </th><td>Rp {{ number_format($barang->harga_jual,0,".",",") }} </td></tr>
+                                            <tr><th> Gambar Barang  </th><td> 
+                                            @if($barang->gambar_barang)
+                                            <img src="{{asset('img/'.$barang->gambar_barang)}}">
+                                            @else
+                                            Tidak Ada
+                                            @endif
+                                            </td></tr>
+                                            <tr><th> Supplier </th><td> {{ ucwords($barang->supplier->nama_perusahaan) }} </td></tr>
+                                            <tr><th> Kategori </th><td> {{ ucwords($barang->kategori->nama) }} </td></tr>
+                                            <tr><th> Merk </th><td> {{ ucwords($barang->merk->nama) }} </td></tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>

@@ -31,5 +31,9 @@ class merkBarang extends Model
      */
     protected $fillable = ['kode', 'nama', 'asal_negara', 'kode_supplier'];
 
+    public function supplier(){
+        return $this->belongsTo('App\supplier','kode_supplier','kode_supplier');
+    }
+
     
 }

@@ -1,42 +1,58 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Supplier</div>
-                    <div class="panel-body">
+        <div id="content">
+                <div class="outer">
+                    <div class="inner bg-light lter">
+                        <!--BEGIN INPUT TEXT FIELDS-->
+                        <div class="row">
+                        <div class="col-lg-12">
+                            <div class="box dark">
+                                <header>
+                                    <div class="icons"><i class="fa fa-edit"></i></div>
+                                    <h5>Index Supplier</h5>
+                                    <!-- .toolbar -->
+                                    <div class="toolbar">
+                                        <nav style="padding: 8px;">
+                                            <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                            <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </nav>
+                                    </div>            <!-- /.toolbar -->
+                                </header>
+                                <div id="div-1" class="body">
                         <a href="{{ url('/supplier/create') }}" class="btn btn-success btn-sm" title="Add New supplier">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
-                        <form method="GET" action="{{ url('/supplier') }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-
+                     
                         <br/>
                         <br/>
                         <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Kode Supplier</th><th>Nama Perusahaan</th><th>Nama Supplier</th><th>Actions</th>
+                                        <th>#</th>
+                                        <th>Kode Supplier</th>
+                                        <th>Nama Perusahaan</th>
+                                        <th>Nama Supplier</th>
+                                        <th>Alamat</th>
+                                        <th>Asal Negara</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($supplier as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->kode_supplier }}</td><td>{{ $item->nama_perusahaan }}</td><td>{{ $item->nama_supplier }}</td>
+                                        <td>{{ $item->kode_supplier }}</td>
+                                        <td>{{ $item->nama_perusahaan }}</td>
+                                        <td>{{ $item->nama_supplier }}</td>
+                                        <td>{{ $item->alamat_kantor}}</td>
+                                        <td>{{$item->asal_negara}}</td>
                                         <td>
                                             <a href="{{ url('/supplier/' . $item->kode_supplier) }}" title="View supplier"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/supplier/' . $item->kode_supplier . '/edit') }}" title="Edit supplier"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
@@ -54,6 +70,8 @@
                             <div class="pagination-wrapper"> {!! $supplier->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

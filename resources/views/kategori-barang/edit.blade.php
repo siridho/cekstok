@@ -1,14 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            
-
-            <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Edit kategoriBarang #{{ $kategoribarang->kode }}</div>
-                    <div class="panel-body">
+    <div id="content">
+        <div class="outer">
+            <div class="inner bg-light lter">
+                <!--BEGIN INPUT TEXT FIELDS-->
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="box dark">
+                        <header>
+                            <div class="icons"><i class="fa fa-edit"></i></div>
+                            <h5>Ubah Kategori Barang</h5>
+                            <!-- .toolbar -->
+                            <div class="toolbar">
+                                <nav style="padding: 8px;">
+                                    <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                </nav>
+                            </div>            <!-- /.toolbar -->
+                        </header>
+                        <div id="div-1" class="body">
                         <a href="{{ url('/kategori-barang') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
@@ -29,6 +44,8 @@
 
                         </form>
 
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

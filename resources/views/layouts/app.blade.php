@@ -45,6 +45,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style-switcher.css') }}">
     <link rel="stylesheet/less" type="text/css" href="{{ asset('assets/less/theme.less') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
+    
+    <!--jQuery -->
+    <script src="{{ asset('assets/lib/jquery/jquery.js') }}"></script>
 
 
 
@@ -331,8 +334,6 @@
         <p>2017 &copy; Metis Bootstrap Admin Template v2.4.2</p>
     </footer>
 
-    <!--jQuery -->
-    <script src="{{ asset('assets/lib/jquery/jquery.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>

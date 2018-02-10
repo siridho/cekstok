@@ -32,7 +32,7 @@ class barangController extends Controller
      */
     public function create()
     {
-         $sup=barang::orderBy('kode_barang','desc')->first();
+         $sup=barang::withTrashed()->orderBy('kode_barang','desc')->first();
         if($sup)
         $no=(int)substr($sup->kode_barang,1)+1;
         else
@@ -168,7 +168,7 @@ class barangController extends Controller
             }
             $requestData['gambar_barang']=$filename;
         }
-        $barang = barang::findOrFail($id)->update($requestData);
+        barang::findOrFail($id)->update($requestData);
 
 
         return redirect('barang')->with('flash_message', 'barang updated!');

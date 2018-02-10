@@ -32,5 +32,15 @@ class barang extends Model
      */
     protected $fillable = ['kode_barang', 'nama', 'nomor_izin', 'spesifikasi_khusus', 'asal_negara', 'harga_beli', 'harga_jual', 'gambar_barang', 'kode_supplier', 'kategori_barang', 'merk_barang'];
 
+    public function supplier(){
+        return $this->belongsTo('App\supplier','kode_supplier','kode_supplier');
+    }
+    public function kategori(){
+        return $this->belongsTo('App\kategoriBarang','kategori_barang','kode');
+    }
+    public function merk(){
+        return $this->belongsTo('App\merkBarang','merk_barang','kode');
+    }
+
     
 }

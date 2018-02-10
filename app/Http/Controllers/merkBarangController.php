@@ -42,7 +42,7 @@ class merkBarangController extends Controller
      */
     public function create()
     {
-        $sup=merkBarang::orderBy('kode','desc')->first();
+        $sup=merkBarang::withTrashed()->orderBy('kode','desc')->first();
         if($sup)
         $no=(int)substr($sup->kode,1)+1;
         else

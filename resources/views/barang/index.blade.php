@@ -24,16 +24,24 @@
                                     <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>#</th><th>Kode Barang</th><th>Nama</th><th>Nomor Izin</th><th>Actions</th>
+                                                <th>#</th>
+                                                <th>Nama</th>
+                                                <th>Nomor Izin</th>
+                                                <th>Kategori</th>
+                                                <th>Merk</th>
+                                                <th>Supplier</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($barang as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration or $item->id }}</td>
-                                                <td>{{ $item->kode_barang }}</td>
                                                 <td>{{ $item->nama }}</td>
                                                 <td>{{ $item->nomor_izin }}</td>
+                                                <td>{{ ucwords($item->kategori->nama) }}</td>
+                                                <td>{{ ucwords($item->merk->nama) }}</td>
+                                                <td>{{ ucwords($item->supplier->nama_perusahaan) }}</td>
                                                 <td>
                                                     <a href="{{ url('/barang/' . $item->kode_barang) }}" title="View barang"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                                     <a href="{{ url('/barang/' . $item->kode_barang . '/edit') }}" title="Edit barang"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

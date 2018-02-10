@@ -1,44 +1,57 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Merkbarang</div>
-                    <div class="panel-body">
+<div id="content">
+        <div class="outer">
+            <div class="inner bg-light lter">
+                <!--BEGIN INPUT TEXT FIELDS-->
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="box dark">
+                        <header>
+                            <div class="icons"><i class="fa fa-edit"></i></div>
+                            <h5>Index Merk Barang</h5>
+                            <!-- .toolbar -->
+                            <div class="toolbar">
+                                <nav style="padding: 8px;">
+                                    <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+                                </nav>
+                            </div>            <!-- /.toolbar -->
+                        </header>
+                        <div id="div-1" class="body">
                         <a href="{{ url('/merk-barang/create') }}" class="btn btn-success btn-sm" title="Add New merkBarang">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
-                        <form method="GET" action="{{ url('/merk-barang') }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
 
                         <br/>
                         <br/>
                         <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Kode</th><th>Nama</th><th>Asal Negara</th><th>Actions</th>
+                                        <th>#</th>
+                                        <th>Kode</th>
+                                        <th>Nama</th>
+                                        <th>Asal Negara</th>
+                                        <th>Supplier</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($merkbarang as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->kode }}</td><td>{{ $item->nama }}</td><td>{{ $item->asal_negara }}</td>
+                                        <td>{{ $item->kode }}</td>
+                                        <td>{{ $item->nama }}</td>
+                                        <td>{{ $item->asal_negara }}</td>
+                                        <td>{{ ucwords($item->supplier->nama_perusahaan) }}</td>
                                         <td>
-                                            <a href="{{ url('/merk-barang/' . $item->kode) }}" title="View merkBarang"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/merk-barang/' . $item->kode . '/edit') }}" title="Edit merkBarang"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
                                             <form method="POST" action="{{ url('/merk-barang' . '/' . $item->kode) }}" accept-charset="UTF-8" style="display:inline">
@@ -54,6 +67,8 @@
                             <div class="pagination-wrapper"> {!! $merkbarang->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
+                    </div>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -44,7 +44,7 @@ class supplierController extends Controller
      */
     public function create()
     {
-        $sup=supplier::orderBy('kode_supplier','desc')->first();
+        $sup=supplier::withTrashed()->orderBy('kode_supplier','desc')->first();
          if($sup)
         $no=(int)substr($sup->kode_supplier,1)+1;
         else
